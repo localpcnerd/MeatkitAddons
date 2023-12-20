@@ -7,14 +7,16 @@ using FistVR;
 
 public class MultiHandleBoltHandle : ClosedBoltHandle 
 {
+    [HeaderAttribute("Hover Over Variables To Read The Tooltips!!!")]
+
     [Header("Multiple Rotating Handles")]
-    public bool useMultipleHandles;
-    public Transform[] handles;
-    public Vector3[] leftRots;
-    public Vector3[] rightRots;
-    public Vector3[] neutralRots;
-    public bool[] StayRotOnBack;
-    public bool[] UseSoundOnGrab;
+   [Tooltip("Enable either this or the built in rotating handle bool. Do not use both.")]  public bool useMultipleHandles;
+   [Tooltip("All handle Objs, listed in order. List should line up with other lists in the script, EX. handles[0] will match leftRots[0] and so on.")]  public Transform[] handles;
+   [Tooltip("rotation for when the players hand is on the left. Lines up with other lists.")]  public Vector3[] leftRots;
+   [Tooltip("rotation for when the players hand is on the right. Lines up with other lists.")]   public Vector3[] rightRots;
+   [Tooltip("rotation for when the players hand is neutral/not grabbing. Lines up with other lists.")]   public Vector3[] neutralRots;
+   [Tooltip("does the handle stay rotated. Lines up with other lists.")] public bool[] StayRotOnBack;
+   [Tooltip("play a sound on handle grab. Lines up with other lists.")] public bool[] UseSoundOnGrab;
 
     public override void BeginInteraction(FVRViveHand hand)
     {
